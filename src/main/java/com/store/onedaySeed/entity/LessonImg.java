@@ -24,4 +24,10 @@ public class LessonImg extends BaseEntity{
     private String imgUrl;
     private String repImgYn;
 
+    public void updateLessonImg(String originImgName, String imgName, String imgUrl){
+        this.originImgName = originImgName;
+        this.imgName = imgName;
+        this.imgUrl = imgUrl;
+    }
+
 }

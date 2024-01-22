@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import './host.css';
+
+    textarea::placeholder {
+      color: #9c9696;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .textbox {
+      position: relative;
+    }
+
+    .textbox label {
+      position: absolute;
+      top: 1px;
+      /* input 요소의 border-top 설정값 만큼 */
+      left: 1px;
+      /* input 요소의 border-left 설정값 만큼 */
+      padding: .8em .5em;
+      /* input 요소의 padding 값 만큼 */
+      color: #999;
+      cursor: text;
+    }
+
+    .textbox input,
+    .textbox textarea {
+      width: 100%;
+      /* 원하는 너비 설정 */
+      height: auto;
+      /* 높이값 초기화 */
+      line-height: normal;
+      /* line-height 초기화 */
+      padding: .8em .5em;
+      /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
+      font-family: inherit;
+      /* 폰트 상속 */
+      border: 1px solid #999;
+      border-radius: 0;
+      /* iSO 둥근모서리 제거 */
+      outline-style: none;
+      /* 포커스시 발생하는 효과 제거를 원한다면 */
+      -webkit-appearance: none;
+      /* 브라우저별 기본 스타일링 제거 */
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    input::-webkit-inner-spin-button {
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+    }
+
+    textarea {
+      resize: none;
+      width: 360px;
+      height: 250px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Host님, 원하는 CLASS를 등록해 주세요.</h1>
+  </header>
+
+  <hr>
+  <form action="/save" method="get">
+    <fieldset>
+      <legend>정보 입력</legend>
+      <p>
+        <label for="classTitle">- 클래스 제목</label>
+        <input type="text" id="classTitle" required><br>
+      </p>
+
+      <p>
+        <label for="classHostName">- 강사 이름</label>
+        <input type="text" id="classHostName" required><br>
+      </p>
+
+      <p>
+        <label for="classStartDay">- 클래스 시작일</label>
+        <input type="datetime" id="classStartDay" required><br>
+      </p>
+
+      <p>
+        <label for="classCategori">- 카테고리</label>
+        <select name="classCategori" id="classCategori" required><br>
+          <option value="cooking">요리</option>
+          <option value="handicraft">수공예</option>
+          <option value="music">음악</option>
+          <option value="baking">베이킹</option>
+          <option value="art">미술</option>
+          <option value="sport">운동</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="classCost">- 클래스 가격</label>
+        <input type="number" id="classCost" required><br>
+      </p>
+
+      <p>- 사진 등록 </p>
+      <span>썸네일 사진</span>
+      <input type="file" /><br>
+
+      <span>상세 설명 사진</span>
+      <input type="file" />
+
+    </fieldset>
+    <br>
+    <input type="submit" class="w-btn w-btn-blue" value="저장"><br>
+    <input type="reset" class="w-btn w-btn-gray" value="다시 입력">
+
+  </form>
+
+
+</body>
+
+</html>

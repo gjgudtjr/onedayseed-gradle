@@ -1,4 +1,9 @@
 spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+
   jpa:
     show-sql: true
     database-platform: org.hibernate.dialect.MySQLDialect
@@ -10,11 +15,15 @@ spring:
       naming:
         strategy: org.hibernate.cfg.ImprovedNamingStrategy
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
     properties:
       hibernate:
         format_sql: true
         enable_lazy_load_no_trans: true
       defer-datasource-initialization: true
+
+
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/onedayseed?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC

@@ -10,6 +10,6 @@ public class LessonController {
 
     @GetMapping(value = "/new")
     public String test(){
-        return "여기에 이름을 입력해 주세요";
+        return "레슨명을 입력해 주세요.";
     }
 }
