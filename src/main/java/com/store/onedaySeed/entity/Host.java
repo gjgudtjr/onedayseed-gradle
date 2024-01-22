@@ -1,6 +1,7 @@
 package com.store.onedaySeed.entity;
 
 import com.store.onedaySeed.constant.Role;
+import com.store.onedaySeed.dto.HostFormDto;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -30,5 +31,16 @@ public class Host extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    public static Host createHost(HostFormDto hostFormDto){
+        Host host = new Host();
+
+        host.setHostName(hostFormDto.getHostName());
+        host.setHostNum(hostFormDto.getHostNum());
+        host.setPhoneNum(hostFormDto.getPhoneNum());
+        host.setPassword(hostFormDto.getPassword());
+        host.setRole(Role.HOST);
+
+        return  host;
+    }
 
 }

@@ -19,4 +19,5 @@ public class OnedaySeedApplication {
 	public String forward() {
 		return "forward:/index.html";
 	}
+
 }
