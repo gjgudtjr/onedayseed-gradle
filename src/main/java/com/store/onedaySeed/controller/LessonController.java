@@ -1,0 +1,13 @@
+package com.store.onedaySeed.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class LessonController {
+
+    @GetMapping(value = "/api")
+    public String test(){
+        return "형석";
+    }
+}
