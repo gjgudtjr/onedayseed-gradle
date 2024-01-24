@@ -1,49 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Component } from 'react';
 import axios from "axios";
+import LessonForm from './components/LessonForm';
+import { Route, Routes } from 'react-router-dom';
 
-function App() {
+class App extends Component{
 
-  const baseUrl = "http://localhost:8080/lesson/new";
-  const [data, setData] = useState();
+  render(){
 
-  useEffect(()=>{
-    getData();
-  },[]);
-
-  async function getData(){
-    await axios.get(baseUrl)
-    .then((response)=>{
-      console.log(response.data);
-      setData(response.data);
-    })
-    .catch((error)=>{
-      console.log(error);
-    })
-  }
-  
-  return (
-    <div className="App">
+    return (
+      <div className="App">
+        <Routes>
+          <Route exact path='/lesson/new' Component={LessonForm}></Route>
+        </Routes>
+        <input placeholder='dd'></input>
+      </div>
       
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. 형석
-        </p>
-        <input type='text' placeholder={data}></input>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    );
+  }
 }
+
 
 
 export default App;

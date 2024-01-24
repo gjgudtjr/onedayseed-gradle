@@ -11,7 +11,7 @@ public class HostFormDto {
 
     private String hostNum;
     private String hostName;
-    private Long phoneNum;
+    private String phoneNum;
     private String password;
 
     @Enumerated(EnumType.STRING)

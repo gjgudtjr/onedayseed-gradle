@@ -12,4 +12,6 @@ public class LessonDto {
     private Long price;
     private String lessonDetailInfo;
     private Integer lessonLimited;
+
+    private Integer lessonStatus;
 }

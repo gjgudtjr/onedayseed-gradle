@@ -23,14 +23,12 @@ public class LessonRegisterDto {
     private String lessonSchedule;
     @NotNull(message = "가격 입력은 필수입니다.")
     private Long price;
-    @NotBlank(message = "클래스 소개는 필수입니다.")
-    private String lessonDetailInfo;
     @NotBlank(message = "최대 인원 설정은 필수입니다.")
     private Integer lessonLimited;
 
     private LessonStatus lessonStatus;
-    private List<LessonImgDto> lessonImgDtoList = new ArrayList<>();
-    private List<Long> lessonImgIds = new ArrayList<>();
+    //private List<LessonImgDto> lessonImgDtoList = new ArrayList<>();
+    //private List<Long> lessonImgIds = new ArrayList<>();
     private static ModelMapper modelMapper = new ModelMapper();
     public Lesson createLesson(){
         return modelMapper.map(this, Lesson.class);

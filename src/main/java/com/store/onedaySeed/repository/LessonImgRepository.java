@@ -7,7 +7,5 @@ import java.util.List;
 
 public interface LessonImgRepository extends JpaRepository<LessonImg, Long> {
 
-    List<LessonImg> findByLessonIdOrderByIdAsc(Long lessonId);
 
-    LessonImg findByLessonIdAndRepImgYn(Long lessonId, String repImgYn);
 }

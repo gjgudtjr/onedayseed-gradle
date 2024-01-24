@@ -31,9 +31,8 @@ public class Lesson extends BaseEntity{
 
     @Column(nullable = false , name="lesson_schedule")
     private String lessonSchedule;
-    //LocalDateTime,Long ?
 
-    @Column(nullable = false, name ="fee")
+    @Column(nullable = false, name ="price")
     private Long price;
 
     @Column(nullable = false , name ="lesson_limited")
